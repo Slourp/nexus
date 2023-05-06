@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  nexus:
+    image: sonatype/nexus3
+    container_name: ${PROJECT_NAME}_NEXUS
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${PROJECT_NAME}_NEXUS.rule=Host(`${DOMAIN}.traefik.me`)"
+      - "traefik.http.services.${PROJECT_NAME}_NEXUS.loadbalancer.server.port=8081"
+      - "traefik.http.routers.${PROJECT_NAME}_NEXUS.tls=true"
+      - "traefik.http.routers.${PROJECT_NAME}_NEXUS.tls.domains[0].main=${DOMAIN}.traefik.me"
+      - "traefik.http.routers.${PROJECT_NAME}_NEXUS.tls.domains[0].sans=*.${DOMAIN}.traefik.me"
+    volumes:
+      - data:/sonatype-work
+    environment:
+      - NEXUS_CONTEXT=${NEXUS_CONTEXT:-/}
+      - NEXUS_DEFAULT_ADMIN_PASSWORD=${NEXUS_DEFAULT_ADMIN_PASSWORD:-admin123}
+
+networks:
+  default:
+    name: ${NETWORK_NAME}
+  project-network:
+    name: ${PROJECT_NAME}-NETWORK
+    internal: true
+
+volumes:
+  data:
+    name: ${PROJECT_NAME}_data
+
