@@ -9,39 +9,39 @@
 To get started with this project, follow these steps:
 
 1. Clone the repository:
+git clone https://github.com/username/devops-nexus.git
 
-   ```
-   git clone https://github.com/username/devops-nexus.git
-   ```
 
 2. Create an `.env` file and set the required environment variables:
 
-   ```
-   # docker
-   # Network variables
-   NETWORK_NAME=dev
+```
+# docker
+# Network variables
+NETWORK_NAME=dev
 
-   # Project variables
-   PROJECT_NAME=DEVOPS_NEXUS
+# Project variables
+PROJECT_NAME=DEVOPS_NEXUS
 
-   # Nexus variables
-   NEXUS_CONTEXT=/
-   NEXUS_DEFAULT_ADMIN_PASSWORD=admin123
+# Nexus variables
+NEXUS_CONTEXT=/
+NEXUS_DEFAULT_ADMIN_PASSWORD=admin123
 
-   # Domain variables
-   DOMAIN_NAME=nexus.traefik.me
-   DOMAIN=nexus
-   ```
+# Domain variables
+DOMAIN_NAME=nexus.traefik.me
+DOMAIN=nexus
+```
 
-3. Start the services using Docker Compose:
+3. Modify the `docker-compose.yml` file to suit your needs. You can change the Nexus version, port mappings, environment variables, and other settings.
 
-   ```
-   docker-compose up -d
-   ```
+4. Run the following command to start the Nexus deployment: 🚀
 
-4. Access the service:
+```
+docker-compose up -d
+```
 
-   - Nexus: `http://nexus.traefik.me`
+5. Access the service:
+
+- Nexus: `http://nexus.traefik.me`
 
 ## Service
 
@@ -56,3 +56,13 @@ To get started with this project, follow these steps:
 ## License
 
 📄 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Need Help? Contact the Developer! 🤝
+
+If you have any questions, issues, or feature requests, feel free to contact the developer of this project.
+
+- Name: David .V
+- Email: davidvanmak+github@gmail.com
+- GitHub: https://github.com/Slourp/
+
+I'm always happy to help! 😊
