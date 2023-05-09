@@ -43,7 +43,7 @@ To get started with this project, follow these steps:
 
 5. Access the service:
 
-   - Nexus: `http://nexus.traefik.me`
+   - Nexus: `https://nexus.traefik.me`
 
 ## Service
 
